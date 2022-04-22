@@ -1,4 +1,5 @@
 import React from 'react';
+import 'react-native-get-random-values';
 import {store} from "./store/store";
 import { Provider } from 'react-redux';
 

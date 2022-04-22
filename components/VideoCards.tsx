@@ -9,19 +9,19 @@ export type VideoCardsType = {
     videoList: Array<VideoType>
 }
 
-const VideoCards = () => {
-    const videos = useSelector<AppRootStateType, Array<VideoType>>(state => state.videoList);
-
+const VideoCards = (props: VideoCardsType) => {
+    // const videos = useSelector<AppRootStateType, Array<VideoType>>(state => state.videoList);
     return (
-            <ScrollView>
-                <View>
-                    <VideoCard/>
-                    <VideoCard/>
-                    <VideoCard/>
-                    <VideoCard/>
-                    <VideoCard/>
-                </View>
-            </ScrollView>
+            <>
+                    {props.videoList.map(video =>{
+                        return (
+                            <VideoCard
+                                key={video.id}
+                                video={video}
+                            />
+                        )
+                    })}
+            </>
     );
 };
 
