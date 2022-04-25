@@ -29,14 +29,11 @@ const VideoPage = () => {
                 page={pagination.currentPageTileView - 1}
                 numPages={videoPackages.length}
             />
-            <ScrollView >
-                {/*<VideoCards videoList={videoPackages[pagination.currentPageTileView - 1]}/>*/}
-                {/*<VideoTable videoList={videoPackages[pagination.currentPageTileView - 1]}/>*/}
-                {/*<NoResults/>*/}
+            <View>
                 {videoPackages.length && isTableView === false ? <VideoCards videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}
                 {videoPackages.length && isTableView === true ? <VideoTable videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}
                 {videoPackages.length ? null : <NoResults/>}
-            </ScrollView>
+            </View>
         </View>
     );
 };

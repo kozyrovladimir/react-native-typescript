@@ -1,34 +1,70 @@
+import { ImageSourcePropType } from "react-native";
 import {v1} from "uuid";
-const AUTUMN_CIRCULATE = "../assets/video_img/autumn/AUTUMN_CIRCULATE.png";
-const AUTUMN_COMPLETE = "../assets/video_img/autumn/AUTUMN_COMPLETE.png";
-const AUTUMN_PURGE = "../assets/video_img/autumn/AUTUMN_PURGE.png";
-const AUTUMN_TONIFY = "../assets/video_img/autumn/AUTUMN_TONIFY.png";
-const EMBRACE_THE_TREE = "../assets/video_img/autumn/EMBRACE_THE_TREE.png";
-const IMMUNE_SUPPORT = "../assets/video_img/autumn/IMMUNE_SUPPORT.png";
-const EARTH_ELEMENT = "../assets/video_img/later_summer/EARTH_ELEMENT.png";
-const HAPPY_SPLEEN_STOMACH = "../assets/video_img/later_summer/HAPPY_SPLEEN_STOMACH.png";
-const LATE_SUMMER_CIRCULATE = "../assets/video_img/later_summer/LATE_SUMMER_CIRCULATE.png";
-const LATE_SUMMER_PURGE = "../assets/video_img/later_summer/LATE_SUMMER_PURGE.png";
-const LATE_SUMMER_TONIFY = "../assets/video_img/later_summer/LATE_SUMMER_TONIFY.png";
-const THE_THREE_FORCES_STANDING_MEDITATION = "../assets/video_img/later_summer/THE_THREE_FORCES_STANDING_MEDITATION.png";
-const ENERGY_SYSTEM_REBOOT = "../assets/video_img/spring/ENERGY_SYSTEM_REBOOT.png";
-const HAPPY_LIVER = "../assets/video_img/spring/HAPPY_LIVER.png";
-const HITTING_WITH_SOUNDS = "../assets/video_img/spring/HITTING_WITH_SOUNDS.png";
-const SPRING_CIRCULATE = "../assets/video_img/spring/SPRING_CIRCULATE.png";
-const SPRING_PURGE = "../assets/video_img/spring/SPRING_PURGE.png";
-const SPRING_TONIFY = "../assets/video_img/spring/SPRING_TONIFY.png";
-const FIFTY_MIN_SUMMER_TONIFY = "../assets/video_img/summer/FIFTY_MIN_SUMMER_TONIFY.png";
-const HAPPY_HEART = "../assets/video_img/summer/HAPPY_HEART.png";
-const SEATED_HAPPY_HEART = "../assets/video_img/summer/SEATED_HAPPY_HEART.png";
-const SUMMER_CIRCULATE = "../assets/video_img/summer/SUMMER_CIRCULATE.png";
-const SUMMER_PURGE = "../assets/video_img/summer/SUMMER_PURGE.png";
-const SUMMER_TONIFY = "../assets/video_img/summer/SUMMER_TONIFY.png";
-const INTRODUCTION_WINTER = "../assets/video_img/winter/INTRODUCTION_WINTER.png";
-const SELF_MASSAGE_FOR_WINTER = "../assets/video_img/winter/SELF_MASSAGE_FOR_WINTER.png";
-const WINTER_CIRCULATE = "../assets/video_img/winter/WINTER_CIRCULATE.png";
-const WINTER_PURGE = "../assets/video_img/winter/WINTER_PURGE.png";
-const WINTER_SOLSTICE = "../assets/video_img/winter/WINTER_SOLSTICE.png";
-const WINTER_TONIFY = "../assets/video_img/winter/WINTER_TONIFY.png";
+
+const Images = {
+    AUTUMN_CIRCULATE: require("../assets/video_img/autumn/AUTUMN_CIRCULATE.png"),
+    AUTUMN_COMPLETE: require("../assets/video_img/autumn/AUTUMN_COMPLETE.png"),
+    AUTUMN_PURGE: require("../assets/video_img/autumn/AUTUMN_PURGE.png"),
+    AUTUMN_TONIFY: require("../assets/video_img/autumn/AUTUMN_TONIFY.png"),
+    EMBRACE_THE_TREE: require("../assets/video_img/autumn/EMBRACE_THE_TREE.png"),
+    IMMUNE_SUPPORT: require("../assets/video_img/autumn/IMMUNE_SUPPORT.png"),
+    EARTH_ELEMENT: require("../assets/video_img/later_summer/EARTH_ELEMENT.png"),
+    HAPPY_SPLEEN_STOMACH: require("../assets/video_img/later_summer/HAPPY_SPLEEN_STOMACH.png"),
+    LATE_SUMMER_CIRCULATE: require("../assets/video_img/later_summer/LATE_SUMMER_CIRCULATE.png"),
+    LATE_SUMMER_PURGE: require("../assets/video_img/later_summer/LATE_SUMMER_PURGE.png"),
+    LATE_SUMMER_TONIFY: require("../assets/video_img/later_summer/LATE_SUMMER_TONIFY.png"),
+    THE_THREE_FORCES_STANDING_MEDITATION: require("../assets/video_img/later_summer/THE_THREE_FORCES_STANDING_MEDITATION.png"),
+    ENERGY_SYSTEM_REBOOT: require("../assets/video_img/spring/ENERGY_SYSTEM_REBOOT.png"),
+    HAPPY_LIVER: require("../assets/video_img/spring/HAPPY_LIVER.png"),
+    HITTING_WITH_SOUNDS: require("../assets/video_img/spring/HITTING_WITH_SOUNDS.png"),
+    SPRING_CIRCULATE: require("../assets/video_img/spring/SPRING_CIRCULATE.png"),
+    SPRING_PURGE: require("../assets/video_img/spring/SPRING_PURGE.png"),
+    SPRING_TONIFY: require("../assets/video_img/spring/SPRING_TONIFY.png"),
+    FIFTY_MIN_SUMMER_TONIFY: require("../assets/video_img/summer/FIFTY_MIN_SUMMER_TONIFY.png"),
+    HAPPY_HEART: require("../assets/video_img/summer/HAPPY_HEART.png"),
+    SEATED_HAPPY_HEART: require("../assets/video_img/summer/SEATED_HAPPY_HEART.png"),
+    SUMMER_CIRCULATE: require("../assets/video_img/summer/SUMMER_CIRCULATE.png"),
+    SUMMER_PURGE: require("../assets/video_img/summer/SUMMER_PURGE.png"),
+    SUMMER_TONIFY: require("../assets/video_img/summer/SUMMER_TONIFY.png"),
+    INTRODUCTION_WINTER: require("../assets/video_img/winter/INTRODUCTION_WINTER.png"),
+    SELF_MASSAGE_FOR_WINTER: require("../assets/video_img/winter/SELF_MASSAGE_FOR_WINTER.png"),
+    WINTER_CIRCULATE: require("../assets/video_img/winter/WINTER_CIRCULATE.png"),
+    WINTER_PURGE: require("../assets/video_img/winter/WINTER_PURGE.png"),
+    WINTER_SOLSTICE: require("../assets/video_img/winter/WINTER_SOLSTICE.png"),
+    WINTER_TONIFY: require("../assets/video_img/winter/WINTER_TONIFY.png"),
+}
+
+// import AUTUMN_CIRCULATE from "../assets/video_img/autumn/AUTUMN_CIRCULATE.png";
+// import AUTUMN_COMPLETE from "../img/video_img/autumn/AUTUMN_COMPLETE.png";
+// import AUTUMN_PURGE from "../img/video_img/autumn/AUTUMN_PURGE.png";
+// import AUTUMN_TONIFY from "../img/video_img/autumn/AUTUMN_TONIFY.png";
+// import EMBRACE_THE_TREE from "../img/video_img/autumn/EMBRACE_THE_TREE.png";
+// import IMMUNE_SUPPORT from "../img/video_img/autumn/IMMUNE_SUPPORT.png";
+// import EARTH_ELEMENT from "../img/video_img/later_summer/EARTH_ELEMENT.png";
+// import HAPPY_SPLEEN_STOMACH from "../img/video_img/later_summer/HAPPY_SPLEEN_STOMACH.png";
+// import LATE_SUMMER_CIRCULATE from "../img/video_img/later_summer/LATE_SUMMER_CIRCULATE.png";
+// import LATE_SUMMER_PURGE from "../img/video_img/later_summer/LATE_SUMMER_PURGE.png";
+// import LATE_SUMMER_TONIFY from "../img/video_img/later_summer/LATE_SUMMER_TONIFY.png";
+// import THE_THREE_FORCES_STANDING_MEDITATION
+//     from "../img/video_img/later_summer/THE_THREE_FORCES_STANDING_MEDITATION.png";
+// import ENERGY_SYSTEM_REBOOT from "../img/video_img/spring/ENERGY_SYSTEM_REBOOT.png";
+// import HAPPY_LIVER from "../img/video_img/spring/HAPPY_LIVER.png";
+// import HITTING_WITH_SOUNDS from "../img/video_img/spring/HITTING_WITH_SOUNDS.png";
+// import SPRING_CIRCULATE from "../img/video_img/spring/SPRING_CIRCULATE.png";
+// import SPRING_PURGE from "../img/video_img/spring/SPRING_PURGE.png";
+// import SPRING_TONIFY from "../img/video_img/spring/SPRING_TONIFY.png";
+// import FIFTY_MIN_SUMMER_TONIFY from "../img/video_img/summer/FIFTY_MIN_SUMMER_TONIFY.png";
+// import HAPPY_HEART from "../img/video_img/summer/HAPPY_HEART.png";
+// import SEATED_HAPPY_HEART from "../img/video_img/summer/SEATED_HAPPY_HEART.png";
+// import SUMMER_CIRCULATE from "../img/video_img/summer/SUMMER_CIRCULATE.png";
+// import SUMMER_PURGE from "../img/video_img/summer/SUMMER_PURGE.png";
+// import SUMMER_TONIFY from "../img/video_img/summer/SUMMER_TONIFY.png";
+// import INTRODUCTION_WINTER from "../img/video_img/winter/INTRODUCTION_WINTER.png";
+// import SELF_MASSAGE_FOR_WINTER from "../img/video_img/winter/SELF_MASSAGE_FOR_WINTER.png";
+// import WINTER_CIRCULATE from "../img/video_img/winter/WINTER_CIRCULATE.png";
+// import WINTER_PURGE from "../img/video_img/winter/WINTER_PURGE.png";
+// import WINTER_SOLSTICE from "../img/video_img/winter/WINTER_SOLSTICE.png";
+// import WINTER_TONIFY from "../img/video_img/winter/WINTER_TONIFY.png";
 
 // types for kinds of video
 
@@ -44,7 +80,7 @@ export type OrganType = 'body' | 'breath' | 'essence' | 'qi' | 'emotional mind' 
 
 export type VideoType = {
     id: string,
-    photoPath: string,
+    photoPath: ImageSourcePropType,
     title: string,
     description: string,
     phase: PhaseType,
@@ -57,7 +93,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN CIRCULATE',
-        photoPath: AUTUMN_CIRCULATE,
+        photoPath: Images.AUTUMN_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'autumn',
@@ -67,7 +103,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN COMPLETE',
-        photoPath: AUTUMN_COMPLETE,
+        photoPath: Images.AUTUMN_COMPLETE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'autumn',
@@ -77,7 +113,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN PURGE',
-        photoPath: AUTUMN_PURGE,
+        photoPath: Images.AUTUMN_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'autumn',
@@ -87,7 +123,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN TONIFY',
-        photoPath: AUTUMN_TONIFY,
+        photoPath: Images.AUTUMN_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'autumn',
@@ -97,7 +133,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'EMBRACE THE TREE',
-        photoPath: EMBRACE_THE_TREE,
+        photoPath: Images.EMBRACE_THE_TREE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'attune',
         season: 'autumn',
@@ -107,7 +143,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'IMMUNE SUPPORT',
-        photoPath: IMMUNE_SUPPORT,
+        photoPath: Images.IMMUNE_SUPPORT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'autumn',
@@ -117,7 +153,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'EARTH ELEMENT',
-        photoPath: EARTH_ELEMENT,
+        photoPath: Images.EARTH_ELEMENT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -127,7 +163,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY SPLEEN STOMACH',
-        photoPath: HAPPY_SPLEEN_STOMACH,
+        photoPath: Images.HAPPY_SPLEEN_STOMACH,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -137,7 +173,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER CIRCULATE',
-        photoPath: LATE_SUMMER_CIRCULATE,
+        photoPath: Images.LATE_SUMMER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'later summer',
@@ -147,7 +183,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER PURGE',
-        photoPath: LATE_SUMMER_PURGE,
+        photoPath: Images.LATE_SUMMER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'later summer',
@@ -157,7 +193,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER TONIFY',
-        photoPath: LATE_SUMMER_TONIFY,
+        photoPath: Images.LATE_SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'later summer',
@@ -167,7 +203,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'THE THREE FORCES STANDING MEDITATION',
-        photoPath: THE_THREE_FORCES_STANDING_MEDITATION,
+        photoPath: Images.THE_THREE_FORCES_STANDING_MEDITATION,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -177,7 +213,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'ENERGY SYSTEM REBOOT',
-        photoPath: ENERGY_SYSTEM_REBOOT,
+        photoPath: Images.ENERGY_SYSTEM_REBOOT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'attune',
         season: 'spring',
@@ -187,7 +223,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY LIVER',
-        photoPath: HAPPY_LIVER,
+        photoPath: Images.HAPPY_LIVER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'spring',
@@ -197,7 +233,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HITTING WITH SOUNDS',
-        photoPath: HITTING_WITH_SOUNDS,
+        photoPath: Images.HITTING_WITH_SOUNDS,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'spring',
@@ -207,7 +243,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING CIRCULATE',
-        photoPath: SPRING_CIRCULATE,
+        photoPath: Images.SPRING_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'spring',
@@ -217,7 +253,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING PURGE',
-        photoPath: SPRING_PURGE,
+        photoPath: Images.SPRING_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'spring',
@@ -227,7 +263,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING TONIFY',
-        photoPath: SPRING_TONIFY,
+        photoPath: Images.SPRING_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'spring',
@@ -237,7 +273,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'FIFTY MIN SUMMER TONIFY',
-        photoPath: FIFTY_MIN_SUMMER_TONIFY,
+        photoPath: Images.FIFTY_MIN_SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'summer',
@@ -247,7 +283,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY HEART',
-        photoPath: HAPPY_HEART,
+        photoPath: Images.HAPPY_HEART,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -257,7 +293,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SEATED HAPPY HEART',
-        photoPath: SEATED_HAPPY_HEART,
+        photoPath: Images.SEATED_HAPPY_HEART,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -267,7 +303,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER CIRCULATE',
-        photoPath: SUMMER_CIRCULATE,
+        photoPath: Images.SUMMER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -277,7 +313,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER PURGE',
-        photoPath: SUMMER_PURGE,
+        photoPath: Images.SUMMER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'summer',
@@ -287,7 +323,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER TONIFY',
-        photoPath: SUMMER_TONIFY,
+        photoPath: Images.SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'summer',
@@ -297,7 +333,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'INTRODUCTION WINTER',
-        photoPath: INTRODUCTION_WINTER,
+        photoPath: Images.INTRODUCTION_WINTER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'winter',
@@ -307,7 +343,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SELF MASSAGE FOR WINTER',
-        photoPath: SELF_MASSAGE_FOR_WINTER,
+        photoPath: Images.SELF_MASSAGE_FOR_WINTER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'winter',
@@ -317,7 +353,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER CIRCULATE',
-        photoPath: WINTER_CIRCULATE,
+        photoPath: Images.WINTER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'winter',
@@ -327,7 +363,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER PURGE',
-        photoPath: WINTER_PURGE,
+        photoPath: Images.WINTER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'winter',
@@ -337,7 +373,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER SOLSTICE',
-        photoPath: WINTER_SOLSTICE,
+        photoPath: Images.WINTER_SOLSTICE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'grow',
         season: 'winter',
@@ -347,7 +383,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER TONIFY',
-        photoPath: WINTER_TONIFY,
+        photoPath: Images.WINTER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'winter',
@@ -357,7 +393,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN CIRCULATE',
-        photoPath: AUTUMN_CIRCULATE,
+        photoPath: Images.AUTUMN_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'autumn',
@@ -367,7 +403,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN COMPLETE',
-        photoPath: AUTUMN_COMPLETE,
+        photoPath: Images.AUTUMN_COMPLETE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'autumn',
@@ -377,7 +413,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN PURGE',
-        photoPath: AUTUMN_PURGE,
+        photoPath: Images.AUTUMN_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'autumn',
@@ -387,7 +423,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN TONIFY',
-        photoPath: AUTUMN_TONIFY,
+        photoPath: Images.AUTUMN_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'autumn',
@@ -397,7 +433,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'EMBRACE THE TREE',
-        photoPath: EMBRACE_THE_TREE,
+        photoPath: Images.EMBRACE_THE_TREE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'attune',
         season: 'autumn',
@@ -407,7 +443,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'IMMUNE SUPPORT',
-        photoPath: IMMUNE_SUPPORT,
+        photoPath: Images.IMMUNE_SUPPORT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'autumn',
@@ -417,7 +453,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'EARTH ELEMENT',
-        photoPath: EARTH_ELEMENT,
+        photoPath: Images.EARTH_ELEMENT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -427,7 +463,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY SPLEEN STOMACH',
-        photoPath: HAPPY_SPLEEN_STOMACH,
+        photoPath: Images.HAPPY_SPLEEN_STOMACH,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -437,7 +473,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER CIRCULATE',
-        photoPath: LATE_SUMMER_CIRCULATE,
+        photoPath: Images.LATE_SUMMER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'later summer',
@@ -447,7 +483,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER PURGE',
-        photoPath: LATE_SUMMER_PURGE,
+        photoPath: Images.LATE_SUMMER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'later summer',
@@ -457,7 +493,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER TONIFY',
-        photoPath: LATE_SUMMER_TONIFY,
+        photoPath: Images.LATE_SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'later summer',
@@ -467,7 +503,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'THE THREE FORCES STANDING MEDITATION',
-        photoPath: THE_THREE_FORCES_STANDING_MEDITATION,
+        photoPath: Images.THE_THREE_FORCES_STANDING_MEDITATION,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -477,7 +513,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'ENERGY SYSTEM REBOOT',
-        photoPath: ENERGY_SYSTEM_REBOOT,
+        photoPath: Images.ENERGY_SYSTEM_REBOOT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'attune',
         season: 'spring',
@@ -487,7 +523,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY LIVER',
-        photoPath: HAPPY_LIVER,
+        photoPath: Images.HAPPY_LIVER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'spring',
@@ -497,7 +533,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HITTING WITH SOUNDS',
-        photoPath: HITTING_WITH_SOUNDS,
+        photoPath: Images.HITTING_WITH_SOUNDS,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'spring',
@@ -507,7 +543,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING CIRCULATE',
-        photoPath: SPRING_CIRCULATE,
+        photoPath: Images.SPRING_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'spring',
@@ -517,7 +553,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING PURGE',
-        photoPath: SPRING_PURGE,
+        photoPath: Images.SPRING_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'spring',
@@ -527,7 +563,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING TONIFY',
-        photoPath: SPRING_TONIFY,
+        photoPath: Images.SPRING_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'spring',
@@ -537,7 +573,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'FIFTY MIN SUMMER TONIFY',
-        photoPath: FIFTY_MIN_SUMMER_TONIFY,
+        photoPath: Images.FIFTY_MIN_SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'summer',
@@ -547,7 +583,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY HEART',
-        photoPath: HAPPY_HEART,
+        photoPath: Images.HAPPY_HEART,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -557,7 +593,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SEATED HAPPY HEART',
-        photoPath: SEATED_HAPPY_HEART,
+        photoPath: Images.SEATED_HAPPY_HEART,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -567,7 +603,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER CIRCULATE',
-        photoPath: SUMMER_CIRCULATE,
+        photoPath: Images.SUMMER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -577,7 +613,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER PURGE',
-        photoPath: SUMMER_PURGE,
+        photoPath: Images.SUMMER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'summer',
@@ -587,7 +623,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER TONIFY',
-        photoPath: SUMMER_TONIFY,
+        photoPath: Images.SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'summer',
@@ -597,7 +633,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'INTRODUCTION WINTER',
-        photoPath: INTRODUCTION_WINTER,
+        photoPath: Images.INTRODUCTION_WINTER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'winter',
@@ -607,7 +643,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SELF MASSAGE FOR WINTER',
-        photoPath: SELF_MASSAGE_FOR_WINTER,
+        photoPath: Images.SELF_MASSAGE_FOR_WINTER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'winter',
@@ -617,7 +653,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER CIRCULATE',
-        photoPath: WINTER_CIRCULATE,
+        photoPath: Images.WINTER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'winter',
@@ -627,7 +663,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER PURGE',
-        photoPath: WINTER_PURGE,
+        photoPath: Images.WINTER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'winter',
@@ -637,7 +673,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER SOLSTICE',
-        photoPath: WINTER_SOLSTICE,
+        photoPath: Images.WINTER_SOLSTICE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'grow',
         season: 'winter',
@@ -647,7 +683,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER TONIFY',
-        photoPath: WINTER_TONIFY,
+        photoPath: Images.WINTER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'winter',
@@ -657,7 +693,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN CIRCULATE',
-        photoPath: AUTUMN_CIRCULATE,
+        photoPath: Images.AUTUMN_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'autumn',
@@ -667,7 +703,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN COMPLETE',
-        photoPath: AUTUMN_COMPLETE,
+        photoPath: Images.AUTUMN_COMPLETE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'autumn',
@@ -677,7 +713,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN PURGE',
-        photoPath: AUTUMN_PURGE,
+        photoPath: Images.AUTUMN_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'autumn',
@@ -687,7 +723,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'AUTUMN TONIFY',
-        photoPath: AUTUMN_TONIFY,
+        photoPath: Images.AUTUMN_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'autumn',
@@ -697,7 +733,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'EMBRACE THE TREE',
-        photoPath: EMBRACE_THE_TREE,
+        photoPath: Images.EMBRACE_THE_TREE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'attune',
         season: 'autumn',
@@ -707,7 +743,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'IMMUNE SUPPORT',
-        photoPath: IMMUNE_SUPPORT,
+        photoPath: Images.IMMUNE_SUPPORT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'autumn',
@@ -717,7 +753,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'EARTH ELEMENT',
-        photoPath: EARTH_ELEMENT,
+        photoPath: Images.EARTH_ELEMENT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -727,7 +763,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY SPLEEN STOMACH',
-        photoPath: HAPPY_SPLEEN_STOMACH,
+        photoPath: Images.HAPPY_SPLEEN_STOMACH,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -737,7 +773,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER CIRCULATE',
-        photoPath: LATE_SUMMER_CIRCULATE,
+        photoPath: Images.LATE_SUMMER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'later summer',
@@ -747,7 +783,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER PURGE',
-        photoPath: LATE_SUMMER_PURGE,
+        photoPath: Images.LATE_SUMMER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'later summer',
@@ -757,7 +793,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'LATE SUMMER TONIFY',
-        photoPath: LATE_SUMMER_TONIFY,
+        photoPath: Images.LATE_SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'later summer',
@@ -767,7 +803,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'THE THREE FORCES STANDING MEDITATION',
-        photoPath: THE_THREE_FORCES_STANDING_MEDITATION,
+        photoPath: Images.THE_THREE_FORCES_STANDING_MEDITATION,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'later summer',
@@ -777,7 +813,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'ENERGY SYSTEM REBOOT',
-        photoPath: ENERGY_SYSTEM_REBOOT,
+        photoPath: Images.ENERGY_SYSTEM_REBOOT,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'attune',
         season: 'spring',
@@ -787,7 +823,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY LIVER',
-        photoPath: HAPPY_LIVER,
+        photoPath: Images.HAPPY_LIVER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'spring',
@@ -797,7 +833,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HITTING WITH SOUNDS',
-        photoPath: HITTING_WITH_SOUNDS,
+        photoPath: Images.HITTING_WITH_SOUNDS,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'spring',
@@ -807,7 +843,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING CIRCULATE',
-        photoPath: SPRING_CIRCULATE,
+        photoPath: Images.SPRING_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'spring',
@@ -817,7 +853,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING PURGE',
-        photoPath: SPRING_PURGE,
+        photoPath: Images.SPRING_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'spring',
@@ -827,7 +863,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SPRING TONIFY',
-        photoPath: SPRING_TONIFY,
+        photoPath: Images.SPRING_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'spring',
@@ -837,7 +873,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'FIFTY MIN SUMMER TONIFY',
-        photoPath: FIFTY_MIN_SUMMER_TONIFY,
+        photoPath: Images.FIFTY_MIN_SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'summer',
@@ -847,7 +883,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'HAPPY HEART',
-        photoPath: HAPPY_HEART,
+        photoPath: Images.HAPPY_HEART,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -857,7 +893,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SEATED HAPPY HEART',
-        photoPath: SEATED_HAPPY_HEART,
+        photoPath: Images.SEATED_HAPPY_HEART,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -867,7 +903,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER CIRCULATE',
-        photoPath: SUMMER_CIRCULATE,
+        photoPath: Images.SUMMER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'summer',
@@ -877,7 +913,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER PURGE',
-        photoPath: SUMMER_PURGE,
+        photoPath: Images.SUMMER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'summer',
@@ -887,7 +923,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SUMMER TONIFY',
-        photoPath: SUMMER_TONIFY,
+        photoPath: Images.SUMMER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'summer',
@@ -897,7 +933,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'INTRODUCTION WINTER',
-        photoPath: INTRODUCTION_WINTER,
+        photoPath: Images.INTRODUCTION_WINTER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'winter',
@@ -907,7 +943,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'SELF MASSAGE FOR WINTER',
-        photoPath: SELF_MASSAGE_FOR_WINTER,
+        photoPath: Images.SELF_MASSAGE_FOR_WINTER,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'integrate',
         season: 'winter',
@@ -917,7 +953,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER CIRCULATE',
-        photoPath: WINTER_CIRCULATE,
+        photoPath: Images.WINTER_CIRCULATE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'circulate',
         season: 'winter',
@@ -927,7 +963,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER PURGE',
-        photoPath: WINTER_PURGE,
+        photoPath: Images.WINTER_PURGE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'purge',
         season: 'winter',
@@ -937,7 +973,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER SOLSTICE',
-        photoPath: WINTER_SOLSTICE,
+        photoPath: Images.WINTER_SOLSTICE,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'grow',
         season: 'winter',
@@ -947,7 +983,7 @@ const fakeVideos: Array<VideoType> = [
     {
         id: v1(),
         title: 'WINTER TONIFY',
-        photoPath: WINTER_TONIFY,
+        photoPath: Images.WINTER_TONIFY,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
         phase: 'tonify',
         season: 'winter',

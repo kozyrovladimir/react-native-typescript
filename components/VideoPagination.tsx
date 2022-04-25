@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {DataTable} from 'react-native-paper';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPageTileAC} from "../store/pagination-reducer";
-import {Animated, View} from "react-native";
+import SwitchTableTileView from "./SwitchTableTileView";
+import {AppRootStateType} from "../store/store";
 
 type VideoPaginationType = {
     numPages: number,
@@ -10,17 +11,14 @@ type VideoPaginationType = {
 }
 
 const VideoPagination = (props: VideoPaginationType) => {
-    // const optionsPerPage = [2, 3, 4];
-    // const [page, setPage] = React.useState<number>(0);
-    // const [itemsPerPage, setItemsPerPage] = React.useState(optionsPerPage[0]);
-    //
-    // React.useEffect(() => {
-    //     setPage(0);
-    // }, [itemsPerPage]);
+    const isTableView = useSelector<AppRootStateType, boolean>(state => state.searchOptions.tableView);
     const dispatch = useDispatch();
 
     return (
-            <DataTable >
+            <DataTable style={{flexDirection: "row", justifyContent: 'space-between'}}>
+                <SwitchTableTileView
+                    isTableView={isTableView}
+                />
                 <DataTable.Pagination
                     page={props.page}
                     numberOfPages={props.numPages}

@@ -8,13 +8,17 @@ type VideoListItemType = {
 
 //source={require('../assets/video.png')
 
-const MyComponent = (props: VideoListItemType) => (
+const MyComponent = (props: VideoListItemType) => {
+    const path: string = `${props.video.photoPath}`;
+
+    return(
     <Card style={{width: '100%', padding: 5, borderWidth: 1}}>
         <TouchableRipple
             onPress={() => console.log('Pressed')}
             rippleColor="rgba(0, 0, 0, .32)"
         >
-            <Card.Cover style={{height: 414, aspectRatio: 1/1}} source={require('../assets/video.png')} />
+            {/*fix types*/}
+            <Card.Cover style={{height: 414, aspectRatio: 1/1}} source={props.video.photoPath} />
         </TouchableRipple>
         <Card.Actions>
             <Card.Content>
@@ -27,6 +31,6 @@ const MyComponent = (props: VideoListItemType) => (
             <Text>{props.video.description}</Text>
         </Card.Content>
     </Card>
-);
+)};
 
 export default MyComponent;
