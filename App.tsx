@@ -11,13 +11,14 @@ import Details from "./components/Details";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-   return (
+    return (
         <Provider store={store}>
             <NavigationContainer>
                 <Stack.Navigator screenOptions={{
                     headerShown: false
                 }}>
-                    <Stack.Screen name="Main" component={Main} />
+                    <Stack.Screen
+                        name="Main" component={Main} />
                     <Stack.Screen name="Details" component={Details} />
                 </Stack.Navigator>
             </NavigationContainer>

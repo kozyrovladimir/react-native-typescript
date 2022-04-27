@@ -70,3 +70,9 @@ export function defineElementColor (element: ElementType): string {
             return "#7d7d7d"
     }
 };
+
+//helper function to change first letter to uppercase
+
+export function ucFirst(str: string) {
+    return str[0].toUpperCase() + str.slice(1);
+}

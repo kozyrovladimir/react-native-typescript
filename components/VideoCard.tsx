@@ -2,8 +2,12 @@ import * as React from 'react';
 import { Card, Button, Text, TouchableRipple } from 'react-native-paper';
 import { VideoType } from '../store/video-list-reducer';
 import {useNavigation} from "@react-navigation/native";
-import {defineElementColor, definePhaseColor} from "../utils/helper_functions";
+import {defineElementColor, definePhaseColor, ucFirst} from "../utils/helper_functions";
 import {View, Image} from "react-native";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../store/store";
+import {filterVideosAC, SearchOptionsType } from '../store/search-options-reducer';
+import { setCurrentPageTileAC } from '../store/pagination-reducer';
 
 type VideoListItemType = {
     video: VideoType
@@ -12,41 +16,45 @@ type VideoListItemType = {
 //source={require('../assets/video.png')
 
 const MyComponent = (props: VideoListItemType) => {
-    const path: string = `${props.video.photoPath}`;
     const navigation = useNavigation();
     const phaseColor = definePhaseColor(props.video.phase);
     const elementColor= defineElementColor(props.video.element);
 
+    const dispatch = useDispatch();
+    const options = useSelector<AppRootStateType, SearchOptionsType>(state => state.searchOptions);
+
+    const phaseName = ucFirst(props.video.phase);
+    const elementName = ucFirst(props.video.element);
+
+    function setPhaseOption() {
+        dispatch(filterVideosAC(
+            {
+                ...options,
+                nameFlow: '',
+                season: "all",
+                element: "all",
+                organ: "all",
+                phase: props.video.phase
+            }
+        ))
+        dispatch(setCurrentPageTileAC(1));
+    }
+
+    function setElementOption() {
+        dispatch(filterVideosAC(
+            {
+                ...options,
+                nameFlow: '',
+                phase: "all",
+                season: "all",
+                organ: "all",
+                element: props.video.element
+            }
+        ))
+        dispatch(setCurrentPageTileAC(1));
+    }
+
     return(
-    // <Card style={{padding: 5, borderWidth: 1}}>
-    //     <TouchableRipple
-    //         onPress={() => {
-    //             console.log('Pressed');
-    //             // @ts-ignore
-    //             navigation.navigate('Details');
-    //         }}
-    //         rippleColor="rgba(0, 0, 0, .32)"
-    //     >
-    //         {/*fix types*/}
-    //         <Card.Cover style={{aspectRatio: 1/1}} source={props.video.photoPath} />
-    //     </TouchableRipple>
-    //     <Card.Actions>
-    //         <View style={{flex: 1}}>
-    //             <View>
-    //                 <Card.Content>
-    //                     <Text>{props.video.title}</Text>
-    //                 </Card.Content>
-    //             </View>
-    //             <View style={{flexDirection: 'row'}}>
-    //                 <Button color={phaseColor}>{props.video.phase}</Button>
-    //                 <Button color={elementColor}>{props.video.element}</Button>
-    //             </View>
-    //         </View>
-    //     </Card.Actions>
-    //     <Card.Content>
-    //         <Text>{props.video.description}</Text>
-    //     </Card.Content>
-    // </Card>
         <Card style={{padding: 5, borderWidth: 1, marginBottom: 10}}>
             <TouchableRipple
                     onPress={() => {
@@ -65,9 +73,11 @@ const MyComponent = (props: VideoListItemType) => {
                 <Text style={{fontSize: 20}}>
                     {props.video.title}
                 </Text>
-                <View style={{flexDirection: 'row'}}>
-                    <Button color={phaseColor}>{props.video.phase}</Button>
-                    <Button color={elementColor}>{props.video.element}</Button>
+                <View style={{flexDirection: 'row', paddingTop:10, paddingBottom: 10}}>
+                    <Text onPress={setPhaseOption} style={{color: phaseColor, marginRight: 10}}>{phaseName}</Text>
+                    <Text onPress={setElementOption} style={{color: elementColor}}>{elementName}</Text>
+                    {/*<Button color={phaseColor}>{props.video.phase}</Button>*/}
+                    {/*<Button color={elementColor}>{props.video.element}</Button>*/}
                 </View>
                 <Text>{props.video.description}</Text>
             </View>

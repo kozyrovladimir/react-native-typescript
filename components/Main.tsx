@@ -15,7 +15,7 @@ export const theme = {
     roundness: 2,
     colors: {
         ...DefaultTheme.colors,
-        primary: '#399cc0',
+        primary: '#7d7d7d',
         accent: '#f1c40f',
     },
 };

@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCurrentPageTileAC} from "../store/pagination-reducer";
 import SwitchTableTileView from "./SwitchTableTileView";
 import {AppRootStateType} from "../store/store";
+import {Text} from "react-native";
 
 type VideoPaginationType = {
     numPages: number,
@@ -22,6 +23,7 @@ const VideoPagination = (props: VideoPaginationType) => {
                     switchChangeHandler={props.switchChangeHandler}
                     isTableView={props.isTableView}
                 />
+                <Text style={{alignSelf: 'center'}}>{props.isTableView ? 'Table' : 'Tiled'}</Text>
                 <DataTable.Pagination
                     page={props.page}
                     numberOfPages={props.numPages}
