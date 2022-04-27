@@ -94,7 +94,9 @@ const MenuOptions = (props: SearchOptionItemPropsItem) => {
     return (
         <View
             style={{
+                alignSelf: 'center',
                 marginRight: 10,
+                marginLeft: 10,
                 flexDirection: "column",
             }}>
             <Menu

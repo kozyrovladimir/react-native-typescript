@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {View, ScrollView} from "react-native";
 import VideoCards from "./VideoCards";
 import VideoPagination from './VideoPagination';
@@ -17,6 +17,17 @@ const VideoPage = () => {
     const pagination = useSelector<AppRootStateType, PaginationType>(state => state.pagination);
     const isTableView = useSelector<AppRootStateType, boolean>(state => state.searchOptions.tableView);
 
+    const [tableView, setTableTableView] = useState<boolean>(false);
+
+    const memoizedChangeTableView = useCallback(
+        () => {
+            setTableTableView(!tableView)
+        }, [tableView]
+    )
+     function changeTableView(value:boolean) {
+         setTableTableView(value);
+    }
+
     //filter videos
     const filteredVideos = filterVideos(videos, options);
     //pack videos into arrays for pagination
@@ -25,16 +36,22 @@ const VideoPage = () => {
     return (
         <View>
             <VideoPagination
+                switchChangeHandler={memoizedChangeTableView}
+                isTableView={tableView}
                 //to-do: create separate variables
                 page={pagination.currentPageTileView - 1}
                 numPages={videoPackages.length}
             />
             <View>
-                {videoPackages.length && isTableView === false ? <VideoCards videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}
-                {videoPackages.length && isTableView === true ? <VideoTable videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}
+                {/*{videoPackages.length && isTableView === false ? <VideoCards videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}*/}
+                {/*{videoPackages.length && isTableView === true ? <VideoTable videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}*/}
+                {/*{videoPackages.length ? null : <NoResults/>}*/}
+                {videoPackages.length && tableView === false ? <VideoCards videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}
+                {videoPackages.length && tableView === true ? <VideoTable videoList={videoPackages[pagination.currentPageTileView - 1]}/> : null}
                 {videoPackages.length ? null : <NoResults/>}
             </View>
         </View>
+
     );
 };
 

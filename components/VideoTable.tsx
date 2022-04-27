@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { DataTable } from 'react-native-paper';
+import {Button, DataTable } from 'react-native-paper';
 import {VideoCardsType} from "./VideoCards";
 import {ScrollView, Text} from "react-native";
+import {defineElementColor, definePhaseColor} from "../utils/helper_functions";
 
 
 const MyComponent = (props: VideoCardsType) => {
@@ -17,10 +18,12 @@ const MyComponent = (props: VideoCardsType) => {
                     <DataTable.Title style={{width: 120, overflow: 'hidden'}} numeric>Organ</DataTable.Title>
                 </DataTable.Header>
                     {props.videoList.map(video => {
+                        const phaseColor = definePhaseColor(video.phase);
+                        const elementColor= defineElementColor(video.element);
                         return (
                             <DataTable.Row key={video.id}>
                                 <DataTable.Cell style={{width: 200}}>
-                                    <Text style={{overflow: 'hidden'}}>
+                                    <Text  style={{overflow: 'hidden'}}>
                                         {video.title}
                                     </Text>
                                 </DataTable.Cell>
@@ -35,6 +38,7 @@ const MyComponent = (props: VideoCardsType) => {
                                     </Text>
                                 </DataTable.Cell>
                                 <DataTable.Cell style={{width: 120}} numeric>
+                                    {/*@ts-ignore*/}
                                     <Text style={{overflow: 'hidden'}}>
                                         {video.element}
                                     </Text>

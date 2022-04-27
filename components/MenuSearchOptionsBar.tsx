@@ -13,6 +13,7 @@ import {
 import { AppRootStateType } from '../store/store';
 import MenuSearchOptions from "./MenuSearchOptions";
 import {PhaseType} from "../store/video-list-reducer";
+import SearchInput from "./SearchInput";
 
 const MenuSearchOptionsBar = () => {
     const dispatch = useDispatch();
@@ -78,8 +79,9 @@ const MenuSearchOptionsBar = () => {
     };
 
     return (
-        <View style={{flexDirection: 'row', paddingTop: 10, paddingBottom: 10}}>
-            <ScrollView horizontal={true} >
+        <View style={{flexDirection: 'row', padding: 10}}>
+            <ScrollView horizontal style={{}}>
+                <SearchInput/>
                 <MenuSearchOptions
                     label={'Phase'}
                     options={['attune', 'purge', 'tonify', 'grow', 'circulate', 'integrate', 'all']}

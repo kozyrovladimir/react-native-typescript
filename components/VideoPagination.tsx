@@ -7,17 +7,20 @@ import {AppRootStateType} from "../store/store";
 
 type VideoPaginationType = {
     numPages: number,
-    page: number
+    page: number,
+    isTableView: boolean,
+    switchChangeHandler: () => void
 }
 
 const VideoPagination = (props: VideoPaginationType) => {
-    const isTableView = useSelector<AppRootStateType, boolean>(state => state.searchOptions.tableView);
+    //const isTableView = useSelector<AppRootStateType, boolean>(state => state.searchOptions.tableView);
     const dispatch = useDispatch();
 
     return (
             <DataTable style={{flexDirection: "row", justifyContent: 'space-between'}}>
                 <SwitchTableTileView
-                    isTableView={isTableView}
+                    switchChangeHandler={props.switchChangeHandler}
+                    isTableView={props.isTableView}
                 />
                 <DataTable.Pagination
                     page={props.page}
